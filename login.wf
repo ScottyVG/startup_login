@@ -1,0 +1,97 @@
+on run {input, parameters}
+
+	set volume with output muted
+
+	tell application "System Events"
+		do shell script "/Applications/Mission\\ Control.app/Contents/MacOS/Mission\\ Control"
+		delay 0.5
+		tell process "Dock" to tell group 1 to tell list 1 to tell button 1 to click
+		delay 0.5
+
+	end tell
+
+	tell application "System Events"
+		tell application "iTerm" to activate
+		delay 0.5
+		key code 49 using {option down}
+	end tell
+
+	tell application "System Events"
+		tell application "Calendar" to activate
+		key code 3 using {option down, command down}
+		delay 0.5
+		key code 125 using {option down, command down}
+	end tell
+
+	tell application "System Events"
+		tell application "OmniFocus" to activate
+		tell menu "Perspectives" of menu bar item "Perspectives" of menu bar 1 of process "OmniFocus"
+			click menu item "Today"
+		end tell
+		key code 3 using {option down, command down}
+		delay 0.5
+		key code 126 using {option down, command down}
+	end tell
+
+
+	tell application "System Events"
+		do shell script "/Applications/Mission\\ Control.app/Contents/MacOS/Mission\\ Control"
+		delay 0.5
+		tell process "Dock" to tell group 1 to tell list 1 to tell button 2 to click
+		delay 0.5
+
+	end tell
+
+	tell application "System Events"
+		tell application "Slack" to activate
+		key code 3 using {option down, command down}
+		delay 0.5
+		key code 123 using {shift down, control down, command down}
+	end tell
+
+	tell application "System Events"
+		tell application "Twitter" to activate
+		key code 3 using {option down, command down}
+		delay 2.5
+		key code 123 using {control down, command down}
+	end tell
+
+	tell application "System Events"
+		tell application "Messages" to activate
+		key code 3 using {option down, command down}
+		delay 0.5
+		key code 124 using {option down, command down}
+	end tell
+
+	tell application "System Events"
+		do shell script "/Applications/Mission\\ Control.app/Contents/MacOS/Mission\\ Control"
+		delay 0.5
+		tell process "Dock" to tell group 1 to tell list 1 to tell button 3 to click
+		delay 0.5
+
+	end tell
+
+	tell application "System Events"
+		tell application "Evernote" to activate
+		key code 3 using {option down, command down}
+		delay 2.5
+	end tell
+
+	tell application "System Events"
+		do shell script "/Applications/Mission\\ Control.app/Contents/MacOS/Mission\\ Control"
+		delay 0.5
+		tell process "Dock" to tell group 1 to tell list 1 to tell button 4 to click
+		delay 0.5
+
+	end tell
+
+	tell application "System Events"
+		tell application "Google Chrome" to activate
+		tell menu "Bookmarks" of menu bar item "Bookmarks" of menu bar 1 of process "Google Chrome"
+			click menu item "Open All Bookmarks"
+		end tell
+		key code 3 using {option down, command down}
+	end tell
+
+	return input
+end run
